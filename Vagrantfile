@@ -69,8 +69,9 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get update
   #   sudo apt-get install -y apache2
   # SHELL
-	
- config.vm.provision "shell", path: ".provision/provision.sh"
+ if File.exists(".provision/provision.sh")
+ 	config.vm.provision "shell", path: ".provision/provision.sh"
+ end 
 
  # Set the timezone if this plugin is installed: 
  # https://github.com/tmatilai/vagrant-timezone
