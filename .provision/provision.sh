@@ -27,7 +27,7 @@ source $PROVISION_DIR/vim.sh
 source $PROVISION_DIR/rtags.sh
 
 # Install and configure spacemacs
-source spacemacs.sh
+source $PROVISION_DIR/spacemacs.sh
 
 # Clean up
 sudo apt-get autoremove -y
