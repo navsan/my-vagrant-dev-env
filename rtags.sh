@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $(which rc | grep -c "rc") -eq 0]; then
+if [ $(which rc | grep -c "not found") -eq 1]; then
     cd $SRC_DIR
     git clone https://github.com/Andersbakken/rtags.git
     cd rtags
