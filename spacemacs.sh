@@ -7,7 +7,7 @@ if [ ! -f $MYHOME/.emacs.d/.spacemacs ]; then
 		#DEBIAN_FRONTEND=noninteractive sudo apt-get build-dep -y emacs24		
 		cd $SRC_DIR/
 		wget https://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.gz
-	 	tar zxvf emacs-24.5.tar.gz
+		tar zxvf emacs-24.5.tar.gz
 		cd emacs-24.5
 		./configure
 		make -j 4
