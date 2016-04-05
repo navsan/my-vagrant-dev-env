@@ -8,7 +8,8 @@ if ! which rc > /dev/null ; then
 	cd $SRC_DIR
 	if [ ! -d rtags ]; then 
 	    git clone https://github.com/Andersbakken/rtags.git
-    	git submodule init
+		cd rtags
+		git submodule init
     	git submodule update
 	else 
 		cd rtags 
