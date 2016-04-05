@@ -9,15 +9,18 @@ Vagrant.configure(2) do |config|
     vb.cpus = 3
   end
   
-  get_scripts_from_git = <<SCRIPT
-    SRC_DIR=/home/vagrant/src 
+  config.vm.provision "shell", inline: <<-SCRIPT
+	sudo apt-get update
+	sudo apt-get install -y git
+	SRC_DIR=/home/vagrant/src 
     mkdir -p $SRC_DIR 
-    cd $SRC_DIR 
-    git clone https://github.com/navsan/my-vagrant-dev-env.git
-    source $SRC_DIR/provision.sh
-  SCRIPT
-
-  config.vm.provision "shell", inline => get_scripts_from_git 
+    cd $SRC_DIR
+	if [ ! -d my-vagrant-dev-env ]; then
+	    git clone https://github.com/navsan/my-vagrant-dev-env.git
+	fi
+	cd $SRC_DIR/my-vagrant-dev-env
+	source provision.sh
+SCRIPT
 
   #----------------------------------------------------------------------------
   # Modify for project-specific settings here

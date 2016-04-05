@@ -2,9 +2,9 @@
 set -e 
 set -x 
 
-PROVISION_DIR=/vagrant/.provision
 MYHOME=/home/vagrant
 SRC_DIR=$MYHOME/src
+PROVISION_DIR=$SRC_DIR/my-vagrant-dev-env
 
 sudo apt-get update -y
 
