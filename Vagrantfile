@@ -8,10 +8,16 @@ Vagrant.configure(2) do |config|
     vb.memory = "8192"
 	  vb.cpus = 3
   end
+	
+  get_scripts_from_git = <<SCRIPT
+  	SRC_DIR=/home/vagrant/src 
+  	mkdir -p $SRC_DIR 
+	cd $SRC_DIR 
+	git clone https://github.com/navsan/my-vagrant-dev-env.git
+	source $SRC_DIR/.provision/provision.sh
+  SCRIPT
 
-  if File.exist?(".provision/provision.sh")
- 	  config.vm.provision "shell", path: ".provision/provision.sh"
-  end 
+  config.vm.provision "shell", "inline" => get_scripts_from_git 
 
   #----------------------------------------------------------------------------
   # Insert specific file here
