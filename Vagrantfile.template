@@ -17,7 +17,7 @@ Vagrant.configure(2) do |config|
 	source $SRC_DIR/provision.sh
   SCRIPT
 
-  config.vm.provision "shell", "inline" => get_scripts_from_git 
+  config.vm.provision "shell", inline => get_scripts_from_git 
 
   #----------------------------------------------------------------------------
   # Modify for project-specific settings here
