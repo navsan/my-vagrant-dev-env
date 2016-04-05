@@ -21,10 +21,11 @@ Vagrant.configure(2) do |config|
 
   #----------------------------------------------------------------------------
   # Insert specific file here
-  # if File.exist?(".provision/<FILENAME>.sh")
-  #   config.vm.provision "shell", path: ".provision/<FILENAME>.sh"
-  # end
   #----------------------------------------------------------------------------
+  project_specific_provisioner = "<FILENAME>"  
+  if File.exist?(project_specific_provisioner)
+    config.vm.provision "shell", path: project_specific_provisioner
+  end
 
 
   # Set the timezone if this plugin is installed: 
