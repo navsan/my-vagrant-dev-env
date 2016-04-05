@@ -14,7 +14,7 @@ Vagrant.configure(2) do |config|
   	mkdir -p $SRC_DIR 
 	cd $SRC_DIR 
 	git clone https://github.com/navsan/my-vagrant-dev-env.git
-	source $SRC_DIR/.provision/provision.sh
+	source $SRC_DIR/provision.sh
   SCRIPT
 
   config.vm.provision "shell", "inline" => get_scripts_from_git 
