@@ -20,7 +20,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", "inline" => get_scripts_from_git 
 
   #----------------------------------------------------------------------------
-  # Insert specific file here
+  # Modify for project-specific settings here
   #----------------------------------------------------------------------------
   project_specific_provisioner = "<FILENAME>"  
   if File.exist?(project_specific_provisioner)
