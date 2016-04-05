@@ -4,7 +4,8 @@
 sudo apt-get install -y python-software-properties
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
-sudo add-apt-repository -y 'deb http://llvm.org/apt/jessie/ llvm-toolchain-jessie-3.7 main'
+sudo add-apt-repository -y 'deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.7 main'
+
 
 # Repo for latest git - security reasons
 sudo apt-add-repository ppa:git-core/ppa
