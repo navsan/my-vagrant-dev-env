@@ -5,7 +5,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "8192"
+    vb.memory = "12288"
     vb.cpus = 3
   end
   
@@ -22,15 +22,6 @@ Vagrant.configure(2) do |config|
 	source provision.sh
 SCRIPT
 
-  #----------------------------------------------------------------------------
-  # Modify for project-specific settings here
-  #----------------------------------------------------------------------------
-  project_specific_provisioner = "<FILENAME>"  
-  if File.exist?(project_specific_provisioner)
-    config.vm.provision "shell", path: project_specific_provisioner
-  end
-
-
   # Set the timezone if this plugin is installed: 
   # https://github.com/tmatilai/vagrant-timezone
   # To install the plugin, use this command
@@ -38,4 +29,17 @@ SCRIPT
   if Vagrant.has_plugin?("vagrant-timezone")
     config.timezone.value = "US/Central"
   end
+
+  #----------------------------------------------------------------------------
+  # Modify project-specific settings here
+  #----------------------------------------------------------------------------
+  project_name = "project_name"
+  project_specific_provisioner = project_name + ".sh"
+
+  config.vm.hostname = project_name
+
+  if File.exist?(project_specific_provisioner)
+    config.vm.provision "shell", path: project_specific_provisioner
+  end
+
 end
