@@ -15,9 +15,10 @@ if [ ! -f $MYHOME/.config/powerline/themes ]; then
 	sudo fc-cache -vf
 	sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 
-	sudo pip install psutil 
+	sudo pip install psutil
+	POWERLINE_ROOT=/usr/local/lib/python2.7/dist-packages/powerline
 	mkdir -p $MYHOME/.config/powerline/themes
-	cp -r /usr/local/lib/python2.7/dist-packages/powerline/config_files/themes/tmux $MYHOME/.config/powerline/themes/tmux 
+	cp -r $POWERLINE_ROOT/config_files/themes/tmux $MYHOME/.config/powerline/themes/tmux 
 	ln -sf $DOTFILES/tmux-powerline.json ~/.config/powerline/themes/tmux/default.json 
 fi 
 
