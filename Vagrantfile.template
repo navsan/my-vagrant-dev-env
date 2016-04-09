@@ -34,7 +34,7 @@ SCRIPT
   #----------------------------------------------------------------------------
   # Modify project-specific settings here
   #----------------------------------------------------------------------------
-  project_name = "project_name"
+  project_name = "project-name"
   project_specific_provisioner = project_name + ".sh"
 
   raise "Project name is not a valid hostname" unless project_name =~ /(^[a-zA-Z0-9\-]$)/
