@@ -18,8 +18,11 @@ Vagrant.configure(2) do |config|
     cd $SRC_DIR
 	if [ ! -d my-vagrant-dev-env ]; then
 	    git clone https://github.com/navsan/my-vagrant-dev-env.git
-	fi
-	cd $SRC_DIR/my-vagrant-dev-env
+	    cd $SRC_DIR/my-vagrant-dev-env
+  else
+	    cd $SRC_DIR/my-vagrant-dev-env
+      git pull
+  fi
 	source provision.sh
 SCRIPT
 
