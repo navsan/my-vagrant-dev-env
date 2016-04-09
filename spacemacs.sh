@@ -20,6 +20,7 @@ if [ ! -f $MYHOME/.emacs.d/.spacemacs ]; then
 	ln -sf $DOTFILES/spacemacs/.spacemacs $MYHOME/.spacemacs
 	rm -rf $MYHOME/.emacs.d/private
 	ln -sf $DOTFILES/spacemacs/private $MYHOME/.emacs.d/private
+  chown -R vagrant:vagrant $MYHOME/.emacs.d 
 fi
 
 
