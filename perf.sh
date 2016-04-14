@@ -7,6 +7,6 @@ sudo apt-get install -y linux-tools-generic linux-cloud-tools-generic \
 
 
 # To allow profiling without root privileges
-sudo sh -c 'echo 0 > /proc/sys/kernel/perf_event_paranoid'
-
+sudo sh -c "echo 0 > /proc/sys/kernel/perf_event_paranoid"
+sudo sh -c "echo 0 > /proc/sys/kernel/kptr_restrict"
 
