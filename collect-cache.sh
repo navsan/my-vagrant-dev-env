@@ -2,11 +2,13 @@
 # Rudimentary script to collect some cached packages/binaries to ease
 # setup of new boxes
 
-TODAY=`date +%Y-%m-%d`
-CACHE_DIR=/home/vagrant/cache_${DATE}
+CACHE_DIR=/home/vagrant/cache
 SRC_DIR=/home/vagrant/src
 mkdir -p ${CACHE_DIR}
 
+# Create a file with current (creation) date for future reference
+TODAY=`date +%Y-%m-%d`
+touch "TODAY"
 
 #------------------------------------------------------------------------
 #                     apt packages
@@ -29,7 +31,7 @@ fi
 #------------------------------------------------------------------------
 # ELPA packages
 SPACEMACS_ELPA_DIR=/home/vagrant/.emacs.d/elpa
-if [[ -d ${SPACEMACS_ELPA_DIR }]]; then
+if [[ -d ${SPACEMACS_ELPA_DIR} ]]; then
     cd ${SPACEMACS_ELPA_DIR}
     tar -zcvf ${CACHE_DIR}/spacmacs_elpa.tar.gz . 
 fi
@@ -57,3 +59,10 @@ fi
 #                     vim  TODO
 #------------------------------------------------------------------------
 
+#------------------------------------------------------------------------
+#                     create tarball
+#------------------------------------------------------------------------
+
+cd ${CACHE_DIR}/..
+CACHE_NAME=`basename ${CACHE_DIR}`
+tar -zcvf ${CACHE_NAME}.tar.gz ${CACHE_NAME}
