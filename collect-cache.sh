@@ -42,7 +42,7 @@ rm -rf spacemacs
 git clone https://github.com/syl20bnr/spacemacs
 mv spacemacs .emacs.d
 tar -zcvf spacemacs.tar.gz .emacs.d
-rm -rf spacemacs
+rm -rf .emacs.d
 
 #------------------------------------------------------------------------
 #                     rtags
