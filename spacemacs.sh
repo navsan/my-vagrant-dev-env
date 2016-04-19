@@ -13,21 +13,23 @@ if [ $(emacs --version | grep -c "GNU Emacs 24.5") -eq 0 ]; then
     fi
 
     # Otherwise, build from source
-    cd $SRC_DIR/
-    wget https://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.gz
-    tar zxvf emacs-24.5.tar.gz
-    cd emacs-24.5
-    ./configure
-    make -j 4
-    sudo checkinstall -Dy --install --pkgname=emacs-24.5
+	if [ $(emacs --version | grep -c "GNU Emacs 24.5") -eq 0 ]; then
+		cd $SRC_DIR/
+		wget https://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.gz
+		tar zxvf emacs-24.5.tar.gz
+		cd emacs-24.5
+		./configure
+		make -j 4
+		sudo checkinstall -Dy --install --pkgname=emacs-24.5
+	fi
 fi
-	
+
 # Now install spacemacs
 EMACS_DIR=$MYHOME/.emacs.d
 rm -rf ${EMACS_DIR}
 # Try to get it from cache first
 SPACEMACS_TAR=${CACHE_DIR}/spacemacs.tar.gz
-if [[ -f ${SPACEMACS_TAR}]]; then
+if [[ -f ${SPACEMACS_TAR} ]]; then
     cd ${MYHOME}
     tar -zxvf ${SPACEMACS_TAR}
     if [[ ! -d ${EMACS_DIR} ]]; then
