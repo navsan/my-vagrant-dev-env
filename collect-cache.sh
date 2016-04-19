@@ -8,7 +8,7 @@ mkdir -p ${CACHE_DIR}
 
 # Create a file with current (creation) date for future reference
 TODAY=`date +%Y-%m-%d`
-touch "TODAY"
+touch "${CACHE_DIR}/${TODAY}"
 
 #------------------------------------------------------------------------
 #                     apt packages
