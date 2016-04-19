@@ -5,8 +5,12 @@ set -x
 MYHOME=/home/vagrant
 SRC_DIR=$MYHOME/src
 PROVISION_DIR=$SRC_DIR/my-vagrant-dev-env
+CACHE_DIR=$SRC_DIR/cache
 
 sudo apt-get update -y
+
+# Restore cache
+source $PROVISION_DIR/restore-cache.sh
 
 # Install development prerequisites
 source $PROVISION_DIR/dev-prereq.sh

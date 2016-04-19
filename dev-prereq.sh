@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Restore cache if available
+APT_ARCHIVE_TAR=${CACHE_DIR}/apt-archives.tar.gz
+if [[ -f ${APT_ARCHIVE_TAR} ]]; then
+    cd /var/cache/apt/archives
+    tar -zxvf ${APT_ARCHIVE_TAR}
+fi
+
 # Repo for latest LLVM/Clang
 sudo apt-get install -y python-software-properties
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
