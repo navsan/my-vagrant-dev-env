@@ -52,6 +52,7 @@ if [[ -d ${RTAGS_BUILD_DIR} ]]; then
     cd ${RTAGS_BUILD_DIR}
     rm rtags_*.deb
     sudo checkinstall -Dy --pkgname=rtags --install=no
+    rm -f ${CACHE_DIR}/rtags.deb
     mv rtags_*.deb ${CACHE_DIR}/rtags.deb
 fi
 
