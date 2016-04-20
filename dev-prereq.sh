@@ -4,7 +4,7 @@
 APT_ARCHIVE_TAR=${CACHE_DIR}/apt-archives.tar.gz
 if [[ -f ${APT_ARCHIVE_TAR} ]]; then
     cd /var/cache/apt/archives
-    tar -zxvf ${APT_ARCHIVE_TAR}
+    sudo tar -zxvf ${APT_ARCHIVE_TAR}
 fi
 
 # Repo for latest LLVM/Clang

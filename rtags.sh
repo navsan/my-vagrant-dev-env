@@ -32,5 +32,5 @@ if ! which rc > /dev/null ; then
     cd build
     cmake ..
     make -j 3
-    sudo checkinstall -Dy --pgkname=rtags --install
+    sudo checkinstall -Dy --pkgname=rtags --install
 fi
