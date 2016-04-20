@@ -34,6 +34,9 @@ SCRIPT
     config.timezone.value = "US/Central"
   end
 
+  # Forward ssh-agent (for github/bitbucket)
+  config.ssh.forward_agent = true
+
   #----------------------------------------------------------------------------
   # Modify project-specific settings here
   #----------------------------------------------------------------------------
