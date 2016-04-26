@@ -6,6 +6,7 @@ if [ ! -d "$MYHOME/.oh-my-zsh" ]; then
 	  git clone git://github.com/robbyrussell/oh-my-zsh.git $MYHOME/.oh-my-zsh
 fi
 ln -sf $DOTFILES/.zshrc $MYHOME/.zshrc 
+ln -sf $DOTFILES/.zshenv $MYHOME/.zshenv
 ln -sf $DOTFILES/nav.zsh-theme $MYHOME/.oh-my-zsh/themes/nav.zsh-theme
 
 # Mark .bashrc read-only 
