@@ -51,8 +51,8 @@ fi
 
 # Link in dot files
 ln -sf $DOTFILES/spacemacs/.spacemacs $MYHOME/.spacemacs
-rm -rf $MYHOME/.emacs.d/private
-ln -sf $DOTFILES/spacemacs/private $MYHOME/.emacs.d/private
+ln -sf $DOTFILES/spacemacs/private/local/* $MYHOME/.emacs.d/private/local/
+ln -sf $DOTFILES/spacemacs/private/snippets/* $MYHOME/.emacs.d/private/snippets/
 chown -R vagrant:vagrant $MYHOME/.emacs.d 
 
 
