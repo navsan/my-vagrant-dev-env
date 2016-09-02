@@ -27,8 +27,10 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 20
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 20
 sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.7 20
 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.7 20
+sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-3.7 20
+
 
 
 # Install other useful tools
-sudo apt-get install -y silversearcher-ag ack-grep htop 
+sudo apt-get install -y silversearcher-ag ack-grep htop
 sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
